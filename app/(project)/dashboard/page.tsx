@@ -1,5 +1,6 @@
 import SignOut from '@/app/components/sign-out'
 import { auth } from '@/app/lib/auth'
+import Link from 'next/link'
 import { redirect } from 'next/navigation'
 
 export default async function Dashboard() {
@@ -15,6 +16,8 @@ export default async function Dashboard() {
       <pre>{JSON.stringify(session, null, 2)}</pre>
 
       {session.user?.email && <SignOut />}
+
+      <Link href="/payments">Pagamentos</Link>
     </div>
   )
 }
